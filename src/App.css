@@ -15,18 +15,31 @@ a:visited {
 
 header {
   color: #FFF;
-  background-color: #333;
+  background-color: #333333;
   display: flex;
   justify-content: space-between;
   margin-bottom: 30px;
   padding: 0px 45px;
 }
 
+h2 {
+margin-top: 30px;
+font-size: 30px;
+}
+
+#line{
+  opacity: 0.3;
+}
+
 input {
-  padding: 6px;
   margin: 0px 6px;
+  padding: 6px;
   border: 1px solid #ccc;
   font-size: 14px;
+}
+
+.new-employee-input{
+  margin-top: 35px;
 }
 
 button {
@@ -36,43 +49,33 @@ button {
   padding: 9px 15px;
   margin: 0px 6px;
   background-color: #EF233C;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   color: #FFF;
   text-transform: uppercase;
   cursor: pointer;
-  transition: 0.1s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
 button:hover {
   color: #EF233C;
   background-color: transparent;
-  border: 1px solid #EF233C;
+  border: 2px solid #EF233C;
   transition: 0.2s ease-in-out;
 }
 
 #login-button {
-  background-color: transparent;
+  margin-top: 20px;
   border: none;
-  transition: none;
 }
 
-#login-button:hover {
-  border: none;
-  transition: none;
-}
-
-li {
-  list-style: none;
-}
-
-.employees {
+.employees-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.employee-card {
-  box-shadow: 0 2px 6px 0 rgba(0,0,0,.2);
+.employee-box {
+  box-shadow: 0px 2px 6px 0px rgba(0,0,0,.2);
   min-width: 250px;
   margin: 15px;
 }
@@ -81,16 +84,16 @@ li {
   width: 100px;
 }
 
-.card-top {
+.employee-box-top {
   padding: 45px;
 }
 
-.card-bot {
+.employee-box-bot {
   color: #FFF;
   padding: 30px 15px;
-  background-color: #3e3e3e;
+  background-color: #333333;
 }
 
-.card-description {
-  margin-bottom: 21px;
+.employee-box-text {
+  margin-bottom: 20px;
 }

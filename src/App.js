@@ -5,6 +5,9 @@ import Header from './Components/Header';
 import NewEmployee from './Components/NewEmployee';
 import CompanyStaff from './Components/CompanyStaff';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 class App extends Component {
   constructor(props){
     super(props);
@@ -26,6 +29,7 @@ class App extends Component {
   // This is the axios call to the server for POST(Create)
   createEmployee(body){
     axios.post('/api/employees', body).then(res => {
+      toast.success('Successfuly Added Employee')
       this.setState({employeeList: res.data})
     }).catch(err => console.log(err));
   }
@@ -33,6 +37,7 @@ class App extends Component {
   // This is the axios call to the server for PUT(Edit)
   editEmployee(id, body){
     axios.put(`/api/employees/${id}`, body).then(res => {
+      toast.success('Successfuly Edited Employee')
       this.setState({employeeList: res.data});
     }).catch(err => console.log(err));
   }
@@ -40,6 +45,7 @@ class App extends Component {
   // This is the axios call to the server for DELETE
   deleteEmployee(id){
     axios.delete(`/api/employees/${id}`).then(res => {
+      toast.success('Employee Deleted')
       this.setState({employeeList: res. data});
     }).catch(err => console.log(err));
   }
@@ -47,9 +53,11 @@ class App extends Component {
  render(){ 
     return (
       <div className="App">
+        <ToastContainer />
         <Header/>
         <NewEmployee createEmployee={this.createEmployee}/>
         <h2>Company Manifest</h2>
+        <hr id="line"/>
         <CompanyStaff 
           employeeList={this.state.employeeList}
           editEmployee={this.editEmployee}

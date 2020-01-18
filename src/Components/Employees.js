@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import axios from 'axios'
 
 class Employees extends Component {
     constructor(props) {
@@ -12,25 +11,25 @@ class Employees extends Component {
 
     render(){
         return(
-            <ul className="employees">
+            <ul className="employees-list">
                 {
                     this.props.employeeList.map(employee => (
-                        <li className="employee-card" key={employee.id}>
-                            <div className="card-top">
-                            {
-                                <img className="employee-img" src={employee.image} />
-                            }
+                     <div className="employee-box" 
+                        key={employee.id}>
+                        <div className="employee-box-top">
+                            {<img className="employee-img" src={employee.image} />}
+                        </div>
+                        <div className="employee-box-bot">
+                            <div className="employee-box-text">
+                                <div>{employee.first_name} {employee.last_name}</div>
+                                <div>{employee.email}</div>
+                                <div>{employee.job_title}</div>
+                                <div>{employee.start_date}</div>
                             </div>
-                            <div className="card-bot">
-                                <div className="card-description">
-                                    <div className="employee-name">{employee.first_name} {employee.last_name}</div>
-                                    <div className="employee-email">{employee.email}</div>
-                                    <div className="employee-job">{employee.job_title}</div>
-                                    <div className="employee-startdate">{employee.start_date}</div>
-                                </div>
                                 <button onClick={() => this.props.deleteEmployee(employee.id)}>Delete Employee</button>
-                            </div>
-                        </li>
+                                <button>Edit Employees</button>
+                        </div>
+                     </div>
                     ))
                 }
             </ul>

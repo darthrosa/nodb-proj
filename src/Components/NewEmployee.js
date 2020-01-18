@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import DatePicker from 'react-datepicker'
 import moment from 'moment'
 import "react-datepicker/dist/react-datepicker.css"
-import axios from 'axios'
 
 class NewEmployee extends Component {
     constructor(props){
@@ -48,7 +47,7 @@ class NewEmployee extends Component {
 
     render(){
         return(
-            <div>
+            <div className="new-employee-input">
                 <input onChange={(e) => this.handleFirstNameInput(e)} value={this.state.firstName} placeholder="First Name"/>
                 <input onChange={(e) => this.handleLastNameInput(e)} value={this.state.lastName} placeholder="Last Name"/>
                 <input onChange={(e) => this.handleEmailInput(e)} value={this.state.email} placeholder="Email"/>
