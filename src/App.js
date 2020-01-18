@@ -11,6 +11,9 @@ class App extends Component {
     this.state = {
       employeeList: []
     }
+    this.createEmployee = this.createEmployee.bind(this)
+    this.editEmployee = this.editEmployee.bind(this)
+    this.deleteEmployee = this.deleteEmployee.bind(this)
   }
 
   // This is the axios call to the server for GET(Read)
@@ -48,7 +51,7 @@ class App extends Component {
         <NewEmployee createEmployee={this.createEmployee}/>
         <h2>Company Manifest</h2>
         <CompanyStaff 
-          employeeList={this.employeeList}
+          employeeList={this.state.employeeList}
           editEmployee={this.editEmployee}
           deleteEmployee={this.deleteEmployee}/>
       </div>

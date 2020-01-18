@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
+import React from 'react';
 import Employees from './Employees';
 
-const CompanyStaff = () => {
+const CompanyStaff = ({ employeeList, deleteEmployee }) => {
     return (
        <div>
-           <Employees/>
+           <Employees deleteEmployee={deleteEmployee} employeeList={employeeList}/>
        </div>
     )
 }

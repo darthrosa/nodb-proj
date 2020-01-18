@@ -1,3 +1,96 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
 .App {
+  font-family: Roboto;
   text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: #FFF;
+}
+
+header {
+  color: #FFF;
+  background-color: #333;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  padding: 0px 45px;
+}
+
+input {
+  padding: 6px;
+  margin: 0px 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+button {
+  font-weight: 700;
+  font-size: 14px;
+  border: none;
+  padding: 9px 15px;
+  margin: 0px 6px;
+  background-color: #EF233C;
+  border: 1px solid transparent;
+  color: #FFF;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.1s ease-in-out;
+}
+
+button:hover {
+  color: #EF233C;
+  background-color: transparent;
+  border: 1px solid #EF233C;
+  transition: 0.2s ease-in-out;
+}
+
+#login-button {
+  background-color: transparent;
+  border: none;
+  transition: none;
+}
+
+#login-button:hover {
+  border: none;
+  transition: none;
+}
+
+li {
+  list-style: none;
+}
+
+.employees {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.employee-card {
+  box-shadow: 0 2px 6px 0 rgba(0,0,0,.2);
+  min-width: 250px;
+  margin: 15px;
+}
+
+.employee-img {
+  width: 100px;
+}
+
+.card-top {
+  padding: 45px;
+}
+
+.card-bot {
+  color: #FFF;
+  padding: 30px 15px;
+  background-color: #3e3e3e;
+}
+
+.card-description {
+  margin-bottom: 21px;
 }
