@@ -1,5 +1,5 @@
-const employeesList = require('../data.json')
-let id = 26;
+const employeesList = require('../data.json');
+let id = employeesList.length + 1
 
 module.exports = {
     getAllEmployees: (req, res) => {
