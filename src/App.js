@@ -13,17 +13,44 @@ class App extends Component {
     }
   }
 
+  // This is the axios call to the server for GET(Read)
   componentDidMount(){
-    axios.get('/api/employee')
+    axios.get('/api/employees').then(res => {
+      this.setState({employeeList: res.data});
+    }).catch(err => console.log(err));
+  }
+
+  // This is the axios call to the server for POST(Create)
+  createEmployee(body){
+    axios.post('/api/employees', body).then(res => {
+      this.setState({employeeList: res.data})
+    }).catch(err => console.log(err));
+  }
+
+  // This is the axios call to the server for PUT(Edit)
+  editEmployee(id, body){
+    axios.put(`/api/employees/${id}`, body).then(res => {
+      this.setState({employeeList: res.data});
+    }).catch(err => console.log(err));
+  }
+
+  // This is the axios call to the server for DELETE
+  deleteEmployee(id){
+    axios.delete(`/api/employees/${id}`).then(res => {
+      this.setState({employeeList: res. data});
+    }).catch(err => console.log(err));
   }
 
  render(){ 
     return (
       <div className="App">
         <Header/>
-        <NewEmployee/>
-        <h2>Company Staff</h2>
-        <CompanyStaff/>
+        <NewEmployee createEmployee={this.createEmployee}/>
+        <h2>Company Manifest</h2>
+        <CompanyStaff 
+          employeeList={this.employeeList}
+          editEmployee={this.editEmployee}
+          deleteEmployee={this.deleteEmployee}/>
       </div>
     );
   }
