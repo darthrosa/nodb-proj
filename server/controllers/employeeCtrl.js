@@ -23,12 +23,10 @@ module.exports = {
     },
     editEmployee: (req, res) => {
         const {id} = req.params;
-        const {last_name, job_title, start_date} = req.body;
+        const {job_title} = req.body;
 
         const index = employeesList.findIndex(emp => emp.id === +id);
-        employeesList[index].last_name = last_name;
         employeesList[index].job_title = job_title;
-        employeesList[index].start_date = start_date;
         res.status(200).send(employeesList);
     },
     deleteEmployee: (req, res) => {

@@ -1,12 +1,33 @@
 import React, {Component} from 'react'
+import Employee from './Employee'
 
 class Employees extends Component {
     constructor(props) {
         super(props)
         this.state = {
-
+            toggleView: false,
+            titleInput: ''
         }
     }
+
+    // toggleEdit = () => {
+    //     // console.log(this.state.toggleView)
+    //     this.setState({toggleView: !this.state.toggleView});
+    // }
+
+    // handleInput(val){
+    //     this.setState({titleInput: val});
+    // }
+
+    // updateTitle = (id) => {
+    //     if (!this.state.toggleView)
+    //     {
+    //         this.props.editEmployee({job_title:
+    //         this.state.titleInput || this.props.jobTitle})
+
+    //     }
+    //     this.toggleEdit(id)
+    // }
 
 
     render(){
@@ -14,22 +35,11 @@ class Employees extends Component {
             <ul className="employees-list">
                 {
                     this.props.employeeList.map(employee => (
-                     <div className="employee-box" 
-                        key={employee.id}>
-                        <div className="employee-box-top">
-                            {<img className="employee-img" src={employee.image} />}
-                        </div>
-                        <div className="employee-box-bot">
-                            <div className="employee-box-text">
-                                <div>{employee.first_name} {employee.last_name}</div>
-                                <div>{employee.email}</div>
-                                <div>{employee.job_title}</div>
-                                <div>{employee.start_date}</div>
-                            </div>
-                                <button onClick={() => this.props.deleteEmployee(employee.id)}>Delete Employee</button>
-                                <button>Edit Employees</button>
-                        </div>
-                     </div>
+                        <Employee 
+                        employee={employee}
+                        key={employee.id}
+                        editEmployee={this.props.editEmployee}
+                        deleteEmployee={this.props.deleteEmployee}/>
                     ))
                 }
             </ul>

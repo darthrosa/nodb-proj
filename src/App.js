@@ -36,6 +36,7 @@ class App extends Component {
 
   // This is the axios call to the server for PUT(Edit)
   editEmployee(id, body){
+    console.log(id, body)
     axios.put(`/api/employees/${id}`, body).then(res => {
       toast.success('Successfuly Edited Employee')
       this.setState({employeeList: res.data});
