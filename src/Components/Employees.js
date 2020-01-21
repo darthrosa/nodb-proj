@@ -10,25 +10,6 @@ class Employees extends Component {
         }
     }
 
-    // toggleEdit = () => {
-    //     // console.log(this.state.toggleView)
-    //     this.setState({toggleView: !this.state.toggleView});
-    // }
-
-    // handleInput(val){
-    //     this.setState({titleInput: val});
-    // }
-
-    // updateTitle = (id) => {
-    //     if (!this.state.toggleView)
-    //     {
-    //         this.props.editEmployee({job_title:
-    //         this.state.titleInput || this.props.jobTitle})
-
-    //     }
-    //     this.toggleEdit(id)
-    // }
-
 
     render(){
         return(
@@ -40,6 +21,7 @@ class Employees extends Component {
                         key={employee.id}
                         editEmployee={this.props.editEmployee}
                         deleteEmployee={this.props.deleteEmployee}/>
+                        
                     ))
                 }
             </ul>

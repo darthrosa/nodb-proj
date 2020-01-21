@@ -50,8 +50,8 @@ class Employee extends Component {
                     </div>
                     <div>{employee.start_date}</div>
                 </div>
-                    <button onClick={() => this.props.deleteEmployee(employee.id)}>Delete Employee</button>
-                    <button onClick={() => this.updateTitle(employee.id)}>Edit Employees</button>
+                    <button onClick={() => this.props.deleteEmployee(employee.id)}>Remove Employee</button>
+                    <button onClick={() => this.updateTitle(employee.id)}>Edit Employee</button>
             </div>
          </div>
         )

@@ -72,7 +72,7 @@ class NewEmployee extends Component {
                         )
                     }
                 >Add Employee</button>
-                <button>Filter Employees</button>
+                {/* <button>Filter Employees</button> */}
             </div>
         )
     }
